@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { AiFillPlusCircle } from "react-icons/ai";
+import {FaSave } from "react-icons/fa";
 
 function TodoForm(props) {
 	const [input, setInput] = useState(props.edit ? props.edit.value : "");
@@ -25,7 +27,7 @@ function TodoForm(props) {
 	return (
 		<form className="todo-form" onSubmit={handleSubmit}>
 			{props.edit ? (
-				<>
+				<div className="todo-input-container">
 					<input
 						type="text"
 						placeholder="Update the todo"
@@ -35,10 +37,12 @@ function TodoForm(props) {
 						onChange={handleChange}
 						ref={inputFocus}
 					/>
-					<button className="todo-button edit">Update todo</button>
-				</>
+					<button className="todo-button edit">
+						<FaSave className="icons" />
+					</button>
+				</div>
 			) : (
-				<>
+				<div className="todo-input-container">
 					<input
 						type="text"
 						placeholder="Add a todo"
@@ -48,8 +52,10 @@ function TodoForm(props) {
 						onChange={handleChange}
 						ref={inputFocus}
 					/>
-					<button className="todo-button">Add todo</button>
-				</>
+					<button className="todo-button">
+						<AiFillPlusCircle className="icons" />
+					</button>
+				</div>
 			)}
 		</form>
 	);

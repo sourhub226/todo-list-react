@@ -6,30 +6,32 @@
 }
 
 body {
-	background: linear-gradient(
-		90deg,
-		rgba(48, 16, 255, 1) 0%,
-		rgba(100, 115, 255, 1) 100%
-	);
+	background: linear-gradient(#276bff, #8a03fb);
+	height: 100vh;
+	background-attachment: fixed;
+	display: flex;
+}
+
+#root {
+	margin: auto;
+	padding: 0;
+	max-width: 450px;
+	width: 100%;
 }
 
 .todo-app {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	width: 520px;
-	min-height: 600px;
-	background: #161a2b;
-	text-align: center;
-	margin: 128px auto;
+	background-color: #161a2b;
 	border-radius: 10px;
-	padding-bottom: 32px;
+	margin: 20px 10px;
+	min-height: 500px;
+	padding: 20px;
+	text-align: center;
 }
 
 h1 {
-	margin: 32px 0;
 	color: #fff;
 	font-size: 24px;
+	margin: 10px 0 25px 0;
 }
 
 .complete {
@@ -37,37 +39,37 @@ h1 {
 	opacity: 0.4;
 }
 
-.todo-form {
-	margin-bottom: 32px;
+.todo-input-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
 .todo-input {
 	padding: 14px 32px 14px 16px;
-	border-radius: 4px 0 0 4px;
+	border-radius: 5px 0 0 5px;
 	border: 2px solid #5d0cff;
 	outline: none;
-	width: 320px;
-	background: transparent;
+	width: 100%;
+	background: #181e39;
 	color: #fff;
 }
 
 .todo-input::placeholder {
-	color: #e2e2e2;
+	color: #8d8d8d;
 }
 
 .todo-button {
-	padding: 16px;
+	padding: 12px;
 	border: none;
 	border-radius: 0 4px 4px 0;
 	cursor: pointer;
-	outline: none;
 	background: linear-gradient(
 		90deg,
 		rgba(93, 12, 255, 1) 0%,
 		rgba(155, 0, 250, 1) 100%
 	);
-	color: #fff;
-	text-transform: capitalize;
 }
 
 .todo-input.edit {
@@ -80,30 +82,58 @@ h1 {
 		rgba(20, 159, 255, 1) 0%,
 		rgba(17, 122, 255, 1) 100%
 	);
-	padding: 16px 22px;
-}
-
-.todo-container {
-	display: flex;
-	flex-direction: row;
-	position: relative;
 }
 
 .todo-row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 4px auto;
+	margin: 5px 0;
 	color: #fff;
 	background: linear-gradient(
 		90deg,
 		rgba(255, 118, 20, 1) 0%,
 		rgba(255, 84, 17, 1) 100%
 	);
-
-	padding: 16px;
+	padding-right: 16px;
 	border-radius: 5px;
-	width: 90%;
+	position: relative;
+}
+
+.todo-row-text {
+	padding: 16px;
+	cursor: pointer;
+}
+
+:not(.todo-row.complete) .todo-row-text:hover.todo-row-text::after {
+	content: "Mark as done";
+	width: 140px;
+	height: 100%;
+	background-color: #181e39;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.todo-row.complete .todo-row-text:hover.todo-row-text::after {
+	content: "Mark as undone";
+}
+
+.todo-row.complete.todo-row::before {
+	content: "Done";
+	width: 80px;
+	height: 100%;
+	background-color: #181e39;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 99;
 }
 
 .todo-row:nth-child(4n + 1) {
@@ -132,16 +162,12 @@ h1 {
 
 .icons {
 	display: flex;
-	align-items: center;
 	font-size: 24px;
 	cursor: pointer;
-}
-
-.delete-icon {
-	margin-right: 5px;
 	color: #fff;
 }
 
+.delete-icon,
 .edit-icon {
-	color: #fff;
+	margin-left: 7px;
 }
