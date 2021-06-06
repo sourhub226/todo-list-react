@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdDelete ,MdEdit} from "react-icons/md";
+import { MdDelete, MdEdit } from "react-icons/md";
 import TodoForm from "./TodoForm";
 
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
@@ -20,6 +20,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 		<div
 			className={todo.isComplete ? "todo-row complete" : "todo-row"}
 			key={index}
+			style={{ background: todo.bgColor }}
 		>
 			<div
 				className="todo-row-text"

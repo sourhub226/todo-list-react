@@ -1,14 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiFillPlusCircle } from "react-icons/ai";
-import {FaSave } from "react-icons/fa";
+import { FaSave } from "react-icons/fa";
 
 function TodoForm(props) {
+	const colors = [
+		["#ff7614", "#ff5411"],
+		["#5d0cff", "#9b00fa"],
+		["#ff0cf1", "#fa0087"],
+		["#149fff", "#117aff"],
+	];
 	const [input, setInput] = useState(props.edit ? props.edit.value : "");
-
 	const inputFocus = useRef(null);
 	useEffect(() => {
 		inputFocus.current.focus();
 	});
+
+	const [count, setCount] = useState(0);
 
 	const handleChange = (e) => {
 		setInput(e.target.value);
@@ -20,8 +27,14 @@ function TodoForm(props) {
 		props.onSubmit({
 			id: Math.floor(Math.random() * 10000),
 			text: input,
+			bgColor: `linear-gradient(
+				90deg, 
+				${colors[count % colors.length][0]} 0%, 
+				${colors[count % colors.length][1]} 100%
+				)`,
 		});
 
+		setCount(count + 1);
 		setInput("");
 	};
 	return (

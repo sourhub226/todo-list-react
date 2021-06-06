@@ -11,7 +11,7 @@ function TodoList() {
 		}
 
 		const newTodos = [todo, ...todos];
-
+		console.log(newTodos);
 		setTodos(newTodos);
 	};
 
@@ -47,6 +47,7 @@ function TodoList() {
 				1
 			)[0]
 		);
+		// console.log(updatedTodos);
 		setTodos(updatedTodos);
 	};
 
