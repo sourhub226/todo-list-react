@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
+import useStickyState from "./useStickySate";
 
 function TodoList() {
-	const [todos, setTodos] = useState([]);
+	const [todos, setTodos] = useStickyState([], "Todos");
 
 	const addTodo = (todo) => {
 		if (!todo.text || /^\s*$/.test(todo.text)) {
 			return;
 		}
-
 		const newTodos = [todo, ...todos];
-		console.log(newTodos);
+
 		setTodos(newTodos);
 	};
 
@@ -47,7 +47,7 @@ function TodoList() {
 				1
 			)[0]
 		);
-		// console.log(updatedTodos);
+
 		setTodos(updatedTodos);
 	};
 

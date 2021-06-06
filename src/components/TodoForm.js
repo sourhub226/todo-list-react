@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { FaSave } from "react-icons/fa";
+import useStickyState from "./useStickySate";
 
 function TodoForm(props) {
 	const colors = [
@@ -15,7 +16,7 @@ function TodoForm(props) {
 		inputFocus.current.focus();
 	});
 
-	const [count, setCount] = useState(0);
+	const [count, setCount] = useStickyState(0, "Count");
 
 	const handleChange = (e) => {
 		setInput(e.target.value);
