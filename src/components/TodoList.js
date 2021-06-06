@@ -37,6 +37,16 @@ function TodoList() {
 			}
 			return todo;
 		});
+		updatedTodos.push(
+			updatedTodos.splice(
+				updatedTodos.indexOf(
+					updatedTodos.filter((todo) => {
+						return todo.isComplete;
+					})[0]
+				),
+				1
+			)[0]
+		);
 		setTodos(updatedTodos);
 	};
 
