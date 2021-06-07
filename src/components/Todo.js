@@ -30,13 +30,13 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 				{todo.text}
 			</div>
 			<div className="icons">
-				<MdDelete
-					className="delete-icon"
-					onClick={() => removeTodo(todo.id)}
-				/>
 				<MdEdit
 					className="edit-icon"
 					onClick={() => setEdit({ id: todo.id, value: todo.text })}
+				/>
+				<MdDelete
+					className="delete-icon"
+					onClick={() => removeTodo(todo.id)}
 				/>
 			</div>
 		</div>

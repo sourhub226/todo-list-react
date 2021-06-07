@@ -2,7 +2,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "Trebuchet MS", sans-serif;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
 }
 
 body {
@@ -153,6 +154,6 @@ h1 {
 	color: #fff;
 }
 
-.edit-icon {
+.delete-icon {
 	margin-left: 10px;
 }
