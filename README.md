@@ -1,3 +1,6 @@
+![example workflow](https://github.com/sourhub226/todo-list-react/actions/workflows/main.yml/badge.svg)
+
+
 # To-Do list app
 
 A simple todo list app built using ReactJS.
