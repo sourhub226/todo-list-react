@@ -1,4 +1,5 @@
 ![Made with React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+[![CodeFactor](https://www.codefactor.io/repository/github/sourhub226/todo-list-react/badge)](https://www.codefactor.io/repository/github/sourhub226/todo-list-react)
 ![Github pages deploy](https://github.com/sourhub226/todo-list-react/actions/workflows/main.yml/badge.svg)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sourhub226/todo-list-react/issues)
 ![ViewCount](https://views.whatilearened.today/views/github/sourhub226/todo-list-react.svg)
